@@ -10,8 +10,8 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world....Shen Pipeline creation!
-  displayName: 'Run a one-line script'
+- bash: echo "Hello, world....Shen Pipeline creation"
+ 
 
  |
   
