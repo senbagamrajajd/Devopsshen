@@ -8,7 +8,3 @@ pool:
 
 steps:
 - bash: echo "Hello, world Test pipeline"
- 
-
- |
-  
