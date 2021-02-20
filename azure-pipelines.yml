@@ -7,7 +7,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- bash: echo "Hello, world....Shen Pipeline creation"
+- bash: echo "Hello, world Test pipeline"
  
 
  |
