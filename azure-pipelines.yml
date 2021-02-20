@@ -8,3 +8,22 @@ pool:
 
 steps:
 - bash: echo "Hello, world Test pipeline"
+container:
+
+- task: VSTest@2
+  inputs:
+    testSelector: 'testAssemblies'
+    testAssemblyVer2: |
+      **\*test*.dll
+      !**\*TestAdapter.dll
+      !**\obj\**
+    searchFolder: '$(System.DefaultWorkingDirectory)'
+
+- task: WhiteSource@20
+  inputs:
+    cwd: '$(Build.SourcesDirectory)'
+    extensions: '.dll'
+    checkPolicies: 'SEND_ALERTS'
+    projectRule: 'projectName'
+    projectName: '$(Build.Repository.Name)'
+
